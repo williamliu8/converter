@@ -1,9 +1,7 @@
 <resources>
     <string name="app_name">Converter</string>
-    <string-array name="dropdown">
-        <item>Temperature</item>
-        <item>Volume</item>
-        <item>Weight</item>
-        <item>Currency</item>
-    </string-array>
+    <string name="temperature">Temperature</string>
+    <string name="volume">Volume</string>
+    <string name="weight">Weight</string>
+    <string name="currency">Currency</string>
 </resources>
