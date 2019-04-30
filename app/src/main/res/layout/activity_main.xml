@@ -14,5 +14,13 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:menu="@menu/bottom_navigation" app:labelVisibilityMode="labeled"/>
+            app:menu="@menu/bottom_navigation" app:labelVisibilityMode="labeled"
+            android:id="@+id/bottomNavigationView"/>
+    <fragment
+            android:layout_width="0dp"
+            android:layout_height="0dp" android:name="com.HGS.converter.TemperatureFragment"
+            android:id="@+id/fragment"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"/>
 </android.support.constraint.ConstraintLayout>
