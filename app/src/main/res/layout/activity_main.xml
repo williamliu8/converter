@@ -16,32 +16,12 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:menu="@menu/bottom_navigation" app:labelVisibilityMode="labeled"
             android:id="@+id/bottomNavigationView"/>
-    <fragment
+    <FrameLayout
             android:layout_width="0dp"
-            android:layout_height="0dp" android:name="com.HGS.converter.TemperatureFragment"
-            android:id="@+id/fragment"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"/>
-    <fragment
-            android:layout_width="0dp"
-            android:layout_height="0dp" android:name="com.HGS.converter.VolumeFragment"
-            android:id="@+id/fragment2"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="@+id/fragment"/>
-    <fragment
-            android:layout_width="0dp"
-            android:layout_height="0dp" android:name="com.HGS.converter.WeightFragment"
-            android:id="@+id/fragment3"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="@+id/fragment2"/>
-    <fragment
-            android:layout_width="0dp"
-            android:layout_height="0dp" android:name="com.HGS.converter.CurrencyFragment"
-            android:id="@+id/fragment4"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="@+id/fragment3"/>
+            app:layout_constraintTop_toTopOf="parent" android:id="@+id/content">
+
+    </FrameLayout>
 </android.support.constraint.ConstraintLayout>
