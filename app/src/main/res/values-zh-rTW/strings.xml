@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">單位換算</string>
+    <string-array name="dropdown">
+        <item>溫度</item>
+        <item>容積</item>
+        <item>重量</item>
+        <item>匯率</item>
+    </string-array>
 </resources>
