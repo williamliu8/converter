@@ -4,4 +4,9 @@
     <string name="volume">Volume</string>
     <string name="weight">Weight</string>
     <string name="currency">Currency</string>
+    <string name="tempF2CFormula">Celsius=(Ferenhate-32)*5/9</string>
+    <string name="tempC2FFormula">Ferenhate=Celsius*9/5+32</string>
+    <string name="Ferenhate">Ferenhate</string>
+    <string name="Celsius">Celsius</string>
+    <string name="Button">Button</string>
 </resources>

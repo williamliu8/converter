@@ -6,7 +6,6 @@ import android.support.v4.app.Fragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-
     val temperatureFragment = TemperatureFragment()
     val volumeFragment = VolumeFragment()
     val weightFragment = WeightFragment()
