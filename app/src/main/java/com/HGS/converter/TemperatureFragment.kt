@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.EditText
 import kotlinx.android.synthetic.main.fragment_temperature.*
 
 class TemperatureFragment : Fragment() {
@@ -14,9 +15,23 @@ class TemperatureFragment : Fragment() {
     //var CelsiusTextView : TextView = Celsius
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-      //  runButton.setOnClickListener(){ TODO("not implemented")}
         return inflater.inflate(R.layout.fragment_temperature, container,false)
-     }
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+
+        button_test.setOnClickListener { v -> buttonTest(v) }
+        tempFText.setOnKeyListener { v, keyCode, event ->
+            button_test.text = (v as EditText).text.toString()
+
+            false
+        }
+    }
+
+    fun buttonTest(v: View) {
+        (v as Button).setText(R.string.Celsius)
+    }
 /*
     fun temp_F2C_Fun(v:View) {
 
