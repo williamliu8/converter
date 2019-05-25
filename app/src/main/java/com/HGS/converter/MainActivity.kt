@@ -44,8 +44,4 @@ class MainActivity : AppCompatActivity() {
             true
         }
     }
-
-    fun temp_F2C_Fun(v: View) {
-        (v as Button).text = "You clicked me!!!"
-    }
 }

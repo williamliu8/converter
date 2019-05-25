@@ -5,15 +5,12 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.EditorInfo
 import android.widget.Button
 import android.widget.EditText
 import kotlinx.android.synthetic.main.fragment_temperature.*
 
 class TemperatureFragment : Fragment() {
-    //val runButton : Button = getView()?.findViewById<Button>(R.id.button_F2C) as Button
-    //var runButton: Button = button_F2C
-    //var CelsiusTextView : TextView = Celsius
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_temperature, container,false)
     }
@@ -21,34 +18,23 @@ class TemperatureFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        button_test.setOnClickListener { v -> buttonTest(v) }
+        button_F2C.setOnClickListener { v -> tempF2C(v) }
+
         tempFText.setOnKeyListener { v, keyCode, event ->
-            button_test.text = (v as EditText).text.toString()
-
-            false
+                /*var inputTempInputF = tempFText.text.toString().toInt()
+                var tempOutputC = (inputTempInputF-32)*5/9
+                button_F2C.text = tempOutputC.toString()
+                */
+                 false
+            }
         }
+
+
+    fun tempF2C(v: View) {
+        var inputTempInputF = tempFText.text.toString().toFloat()
+        var OutputTempC = (inputTempInputF-32)*5/9
+        val StringOutputTempC = OutputTempC.toString()
+        val F2Cresult = getString(R.string.CelsiusResult,StringOutputTempC)
+        Celsius.text =  F2Cresult
     }
-
-    fun buttonTest(v: View) {
-        (v as Button).setText(R.string.Celsius)
-    }
-/*
-    fun temp_F2C_Fun(v:View) {
-
-        //var addup = 0
-        //addup++
-        val newScore = getString(R.string.weight)
-        CelsiusTextView.text = newScore
-        /*
-        var COutput:TextView
-
-        val Ftemp:Float
-        var Ctemp:Float
-
-        Ftemp = 75f
-        COutput = Celsius
-        Ctemp = (Ftemp-32)*5/9
-        */
-        //Celsius.text = addup.toString()
-    }*/
 }
