@@ -7,7 +7,8 @@
     <string name="tempF2CFormula">Celsius=(Fahrenheit-32)*5/9</string>
     <string name="tempC2FFormula">Fahrenheit=Celsius*9/5+32</string>
     <string name="Fahrenheit">Fahrenheit</string>
-    <string name="CelsiusResult">is Celsius %s</string>
+    <string name="CelsiusResult">is %.1f°C</string>
+    <string name="CelsiusResultError">Please enter a value</string>
     <string name="Celsius">Celsius</string>
     <string name="runF2C">Run F to C</string>
 </resources>
