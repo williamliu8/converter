@@ -11,4 +11,8 @@
     <string name="CelsiusResultError">Please enter a value</string>
     <string name="Celsius">Celsius</string>
     <string name="runF2C">Run F to C</string>
+    <string-array name="temItem_Array">
+        <item>Fahrenheit</item>
+        <item>Celsius</item>
+    </string-array>
 </resources>

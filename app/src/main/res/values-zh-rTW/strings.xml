@@ -12,4 +12,8 @@
     <string name="CelsiusResultError">请输入数字</string>
     <string name="Celsius">攝氏</string>
     <string name="runF2C">執行 F to C</string>
+    <string-array name="temItem_Array">
+        <item>Fahrenheit</item>
+        <item>Celsius</item>
+    </string-array>
 </resources>
