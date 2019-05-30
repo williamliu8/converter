@@ -7,59 +7,39 @@
 
     <TextView
             android:text="@string/tempF2CFormula"
-            android:layout_width="wrap_content"
-            android:layout_height="20dp"
-            android:id="@+id/ID_F2C"
+            android:layout_width="173dp"
+            android:layout_height="38dp"
+            android:id="@+id/ID_tempFormula"
             android:textSize="18sp"
             android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginRight="8dp" android:layout_marginStart="8dp"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp"
             app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="48dp"/>
     <TextView
-            android:text="@string/tempC2FFormula"
-            android:layout_width="wrap_content"
-            android:layout_height="20dp"
-            android:id="@+id/ID_c2F"
-            android:textSize="18sp"
-            android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginRight="8dp"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp"
-            android:layout_marginStart="8dp"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintTop_toBottomOf="@+id/tempFText" android:layout_marginTop="152dp"/>
-    <TextView
-            android:text="@string/CelsiusResultError"
+            android:text="@string/FInputError"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textF2CResult"
-            app:layout_constraintStart_toEndOf="@+id/tempFText"
+            android:id="@+id/textTempResult"
+            app:layout_constraintStart_toEndOf="@+id/tempInputText"
             android:layout_marginLeft="8dp" android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="8dp" android:layout_marginRight="8dp" android:layout_marginTop="140dp"
-            app:layout_constraintTop_toBottomOf="@+id/ID_F2C" app:layout_constraintHorizontal_bias="0.463"/>
+            app:layout_constraintTop_toBottomOf="@+id/ID_tempFormula" app:layout_constraintHorizontal_bias="0.463"/>
     <EditText
             android:layout_width="164dp"
-            android:layout_height="40dp"
+            android:layout_height="56dp"
             android:inputType="numberDecimal|numberSigned"
             android:ems="10"
-            android:id="@+id/tempFText"
+            android:id="@+id/tempInputText"
             android:layout_marginStart="36dp"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="36dp"
             android:hint="@string/Fahrenheit"
-            android:layout_marginTop="128dp" app:layout_constraintTop_toBottomOf="@+id/ID_F2C"/>
+            android:layout_marginTop="128dp" app:layout_constraintTop_toBottomOf="@+id/ID_tempFormula"/>
     <Spinner
             android:layout_width="395dp"
             android:layout_height="wrap_content"
             android:id="@+id/tempInputSpinner" android:layout_marginTop="36dp"
-            app:layout_constraintTop_toBottomOf="@+id/ID_F2C" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ID_tempFormula" app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="8dp" android:layout_marginRight="8dp"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp"
-            android:layout_marginStart="8dp"/>
-    <Spinner
-            android:layout_width="395dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/tempOutputSpinner" android:layout_marginTop="28dp"
-            app:layout_constraintTop_toBottomOf="@+id/tempFText" android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"/>
 </android.support.constraint.ConstraintLayout>

@@ -3,11 +3,7 @@ package com.HGS.converter
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.view.View
-import android.widget.Button
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.fragment_temperature.*
-import kotlinx.android.synthetic.main.fragment_temperature.view.*
 
 class MainActivity : AppCompatActivity() {
     val temperatureFragment = TemperatureFragment()

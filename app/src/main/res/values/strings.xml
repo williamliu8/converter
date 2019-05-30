@@ -1,18 +1,20 @@
 <resources>
     <string name="app_name">Converter</string>
-    <string name="temperature">Temperature</string>
     <string name="volume">Volume</string>
     <string name="weight">Weight</string>
     <string name="currency">Currency</string>
+
+    <string name="temperature">Temperature</string>
+    <string name="Fahrenheit">Fahrenheit</string>
+    <string name="Celsius">Celsius</string>
     <string name="tempF2CFormula">Celsius=(Fahrenheit-32)*5/9</string>
     <string name="tempC2FFormula">Fahrenheit=Celsius*9/5+32</string>
-    <string name="Fahrenheit">Fahrenheit</string>
+    <string name="FahrenheitResult">is %.1f°F</string>
     <string name="CelsiusResult">is %.1f°C</string>
-    <string name="CelsiusResultError">Please enter a value</string>
-    <string name="Celsius">Celsius</string>
-    <string name="runF2C">Run F to C</string>
-    <string-array name="temItem_Array">
-        <item>Fahrenheit</item>
-        <item>Celsius</item>
+    <string name="FInputError">Please enter a Fahrenheit value</string>
+    <string name="CInputError">Please enter a Celsius value</string>
+    <string-array name="tempItem_Array">
+        <item>Fahrenheit to Celsius</item>
+        <item>Celsius to Fahrenheit</item>
     </string-array>
 </resources>
