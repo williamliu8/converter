@@ -2,7 +2,6 @@
 <resources>
     <string name="app_name">單位換算</string>
     <string name="volume">容積</string>
-    <string name="weight">重量</string>
     <string name="currency">匯率</string>
 
     <string name="temperature">溫度</string>
@@ -10,12 +9,31 @@
     <string name="Celsius">攝氏</string>
     <string name="tempF2CFormula">攝氏=(華氏-32)*5/9</string>
     <string name="tempC2FFormula">華氏=攝氏*9/5+32</string>
-    <string name="FahrenheitResult">是華氏 %.1f°</string>
-    <string name="CelsiusResult">是攝氏 %.1f°</string>
-    <string name="FInputError">請輸入華氏溫度</string>
-    <string name="CInputError">請輸入攝氏溫度</string>
+    <string name="tempFdegree">°F</string>
+    <string name="tempCdegree">°C</string>
+    <string name="tempResult">%s 是 %.1f %s</string>
+    <string name="tempInputError">請輸入溫度</string>
     <string-array name="tempItem_Array">
         <item>華氏轉攝氏</item>
         <item>攝氏轉華氏</item>
     </string-array>
+
+
+    <string name="Input">輸入</string>
+    <string name="Output">輸出</string>
+    <string name="weight">重量</string>
+    <string name="weightResult">%s 是 %.3f %s</string>
+    <string name="weightResultTooSmall">%s 小於等於0.001 %s</string>
+    <string name="weightInputError">請輸入重量</string>
+    <string name="weightFormula">%s = %5f %s</string>
+
+    <string-array name="weightItem_Array">
+        <item>盎司</item>
+        <item>磅</item>
+        <item>美噸</item>
+        <item>公噸</item>
+        <item>公斤</item>
+        <item>公克</item>
+    </string-array>
+
 </resources>

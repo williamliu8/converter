@@ -13,20 +13,36 @@ import android.widget.ArrayAdapter
 import android.widget.Spinner
 import kotlinx.android.synthetic.main.fragment_temperature.*
 
+enum class tempList{
+    F2C,
+    C2F
+}
+
 class TemperatureFragment : Fragment() {
-    fun Float.f2c(): Float {
-        return (this-32)*5/9
-    }
-    fun Float.c2f(): Float {
-        return this*9/5+32
-    }
-
-    fun Float.celsiusText(): String {
-        return getString(R.string.CelsiusResult, this)
+    fun Float.tempTrans(tempTransType:Int): Float {
+        var tempResult:Float = 0f
+        when(tempTransType){
+            tempList.F2C.ordinal -> tempResult=(this-32)*5/9
+            tempList.C2F.ordinal -> tempResult=this*9/5+32
+        }
+        return tempResult
     }
 
-    fun Float.FahrenheitText(): String {
-        return getString(R.string.FahrenheitResult, this)
+    fun Float.tempResultText(tempTransType:Int): String {
+        var tempInput:String = ""
+        var tempOutput:String =""
+        when(tempTransType){
+            tempList.F2C.ordinal->{
+                tempInput = getString(R.string.tempFdegree)
+                tempOutput = getString(R.string.tempCdegree)
+            }
+            tempList.C2F.ordinal->{
+                tempInput = getString(R.string.tempCdegree)
+                tempOutput = getString(R.string.tempFdegree)
+            }
+
+        }
+        return getString(R.string.tempResult,tempInput,this,tempOutput)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -58,11 +74,11 @@ class TemperatureFragment : Fragment() {
                 tempInputText.setText("")
                 when(tempItemSelect)
                 {
-                    0 -> {
+                    tempList.F2C.ordinal -> {
                         ID_tempFormula.text = getString(R.string.tempF2CFormula)
                         tempInputText.hint=getString(R.string.Fahrenheit)
                     }
-                    1 -> {
+                    tempList.C2F.ordinal -> {
                         ID_tempFormula.text = getString(R.string.tempC2FFormula)
                         tempInputText.hint=getString(R.string.Celsius)
                     }
@@ -76,10 +92,7 @@ class TemperatureFragment : Fragment() {
         tempInputText.addTextChangedListener(object: TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                when(tempItemSelect){
-                    0 -> textTempResult.text = s.toString().toFloatOrNull()?.f2c()?.celsiusText() ?: getString(R.string.FInputError)
-                    1 -> textTempResult.text = s.toString().toFloatOrNull()?.c2f()?.FahrenheitText() ?: getString(R.string.CInputError)
-                }
+            textTempResult.text = s.toString().toFloatOrNull()?.tempTrans(tempItemSelect)?.tempResultText(tempItemSelect) ?: getString(R.string.tempInputError)
             }
             override fun afterTextChanged(e: Editable) {}
         })

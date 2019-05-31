@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">Converter</string>
     <string name="volume">Volume</string>
-    <string name="weight">Weight</string>
     <string name="currency">Currency</string>
 
     <string name="temperature">Temperature</string>
@@ -9,12 +8,31 @@
     <string name="Celsius">Celsius</string>
     <string name="tempF2CFormula">Celsius=(Fahrenheit-32)*5/9</string>
     <string name="tempC2FFormula">Fahrenheit=Celsius*9/5+32</string>
-    <string name="FahrenheitResult">is %.1f°F</string>
-    <string name="CelsiusResult">is %.1f°C</string>
-    <string name="FInputError">Please enter a Fahrenheit value</string>
-    <string name="CInputError">Please enter a Celsius value</string>
+    <string name="tempFdegree">°F</string>
+    <string name="tempCdegree">°C</string>
+    <string name="tempResult">%s is %.1f %s</string>
+    <string name="tempInputError">Please enter Temperature</string>
     <string-array name="tempItem_Array">
         <item>Fahrenheit to Celsius</item>
         <item>Celsius to Fahrenheit</item>
     </string-array>
+
+    <string name="Input">Input</string>
+    <string name="Output">Output</string>
+    <string name="weight">Weight</string>
+    <string name="weightResult">%s is %.3f %s</string>
+    <string name="weightResultTooSmall">%s less or equal than 0.001 %s</string>
+    <string name="weightInputError">Plese Input Weight</string>
+    <string name="weightFormula">%s = %5f %s</string>
+
+
+    <string-array name="weightItem_Array">
+        <item>Ounce</item>
+        <item>Pound</item>
+        <item>USTon</item>
+        <item>MetricTon</item>
+        <item>Kg</item>
+        <item>g</item>
+    </string-array>
+
 </resources>
