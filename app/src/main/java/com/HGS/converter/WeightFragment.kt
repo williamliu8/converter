@@ -47,71 +47,48 @@ class WeightFragment : Fragment() {
             Inputspinner.adapter = adapter
         }
 
+
+        fun weightFindCoefficient(Ounce:Float,OutputSelect:Int) {
+            var gram=Ounce*28.349523125f
+            when(OutputSelect){
+                weightList.ounce.ordinal -> coefficient = Ounce
+                weightList.pound.ordinal -> coefficient = Ounce/16
+                weightList.uston.ordinal -> coefficient = Ounce/32000
+                weightList.metricton.ordinal -> coefficient = gram/1000000
+                weightList.Kg.ordinal -> coefficient = gram/1000f
+                weightList.g.ordinal -> coefficient = gram
+            }
+        }
+
         fun weightInputOutputHandler(InputSelect:Int,OutputSelect:Int){
+            var InputEQ2ounce = 0f
             when(InputSelect)
             {
                 weightList.ounce.ordinal -> {
-                    when(OutputSelect){
-                        weightList.ounce.ordinal -> coefficient = 1f
-                        weightList.pound.ordinal -> coefficient = 0.0625f
-                        weightList.uston.ordinal -> coefficient = 0.000032f
-                        weightList.metricton.ordinal -> coefficient = 0.0000283f
-                        weightList.Kg.ordinal -> coefficient = 0.0283f
-                        weightList.g.ordinal -> coefficient = 28.3f
-                    }
+                    InputEQ2ounce = 1f
+                    weightFindCoefficient(InputEQ2ounce,OutputSelect)
                 }
                 weightList.pound.ordinal ->{
-                    when(OutputSelect){
-                        weightList.ounce.ordinal -> coefficient = 16f
-                        weightList.pound.ordinal -> coefficient = 1f
-                        weightList.uston.ordinal -> coefficient = 0.0005f
-                        weightList.metricton.ordinal -> coefficient = 0.000453f
-                        weightList.Kg.ordinal -> coefficient = 0.45359f
-                        weightList.g.ordinal -> coefficient = 453.59f
-                    }
+                    InputEQ2ounce = 16f
+                    weightFindCoefficient(InputEQ2ounce,OutputSelect)
                 }
                 weightList.uston.ordinal -> {
-                    when(OutputSelect){
-                        weightList.ounce.ordinal -> coefficient = 32000f
-                        weightList.pound.ordinal -> coefficient = 2000f
-                        weightList.uston.ordinal -> coefficient = 1f
-                        weightList.metricton.ordinal -> coefficient = 0.907184f
-                        weightList.Kg.ordinal -> coefficient = 907.184f
-                        weightList.g.ordinal -> coefficient = 907184f
-                    }
+                    InputEQ2ounce = 32000f
+                    weightFindCoefficient(InputEQ2ounce,OutputSelect)
                 }
                 weightList.metricton.ordinal -> {
-                    when(OutputSelect){
-                        weightList.ounce.ordinal -> coefficient = 35273.99f
-                        weightList.pound.ordinal -> coefficient = 2204.624f
-                        weightList.uston.ordinal -> coefficient = 1.1023f
-                        weightList.metricton.ordinal -> coefficient = 1f
-                        weightList.Kg.ordinal -> coefficient = 1000f
-                        weightList.g.ordinal -> coefficient = 1000000f
-                    }
+                    InputEQ2ounce = 35273.9619f
+                    weightFindCoefficient(InputEQ2ounce,OutputSelect)
                 }
                 weightList.Kg.ordinal -> {
-                    when(OutputSelect){
-                        weightList.ounce.ordinal -> coefficient = 35.274f
-                        weightList.pound.ordinal -> coefficient = 2.204f
-                        weightList.uston.ordinal -> coefficient = 0.0011f
-                        weightList.metricton.ordinal -> coefficient = 1000f
-                        weightList.Kg.ordinal -> coefficient = 1f
-                        weightList.g.ordinal -> coefficient = 1000f
-                    }
+                    InputEQ2ounce = 35.2739619f
+                    weightFindCoefficient(InputEQ2ounce,OutputSelect)
                 }
                 weightList.g.ordinal -> {
-                    when(OutputSelect){
-                        weightList.ounce.ordinal -> coefficient = 0.0352f
-                        weightList.pound.ordinal -> coefficient = 0.0022f
-                        weightList.uston.ordinal -> coefficient = 0.0011f
-                        weightList.metricton.ordinal -> coefficient = 0.000001f
-                        weightList.Kg.ordinal -> coefficient = 0.001f
-                        weightList.g.ordinal -> coefficient = 1f
-                    }
+                    InputEQ2ounce = 0.0352739619f
+                    weightFindCoefficient(InputEQ2ounce,OutputSelect)
                 }
             }
-
         }
 
         Inputspinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
@@ -123,7 +100,7 @@ class WeightFragment : Fragment() {
                 weightInputItemSelect = position
                 weightInputText.hint=weightArray[weightInputItemSelect]
                 weightInputOutputHandler(weightInputItemSelect,weightOutputItemSelect)
-                ID_weightFormula.text=getString(R.string.weightFormula,weightArray[weightInputItemSelect],coefficient,weightArray[weightOutputItemSelect])
+                ID_weightFormula.text=getString(R.string.textFormula,weightArray[weightInputItemSelect],coefficient,weightArray[weightOutputItemSelect])
             }
 
         }
@@ -145,7 +122,7 @@ class WeightFragment : Fragment() {
                 weightInputText.setText("")
                 weightOutputItemSelect = position
                 weightInputOutputHandler(weightInputItemSelect,weightOutputItemSelect)
-                ID_weightFormula.text=getString(R.string.weightFormula,weightArray[weightInputItemSelect],coefficient,weightArray[weightOutputItemSelect])
+                ID_weightFormula.text=getString(R.string.textFormula,weightArray[weightInputItemSelect],coefficient,weightArray[weightOutputItemSelect])
 
             }
         }
@@ -157,11 +134,11 @@ class WeightFragment : Fragment() {
         fun Float.weightResultText(OutputItem:Int,InputItem:Int,weightArray:Array<String>): String {
             var resultString:Int
             if(this<=0.001 && this > 0){
-                resultString = R.string.weightResultTooSmall
+                resultString = R.string.textResultTooSmall
                 return getString(resultString,weightArray[InputItem],weightArray[OutputItem])
             }
             else{
-                resultString = R.string.weightResult
+                resultString = R.string.textResult
                 return getString(resultString,weightArray[InputItem],this,weightArray[OutputItem])
             }
 

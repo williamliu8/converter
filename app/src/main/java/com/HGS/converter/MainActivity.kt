@@ -9,12 +9,15 @@ class MainActivity : AppCompatActivity() {
     val temperatureFragment = TemperatureFragment()
     val volumeFragment = VolumeFragment()
     val weightFragment = WeightFragment()
-    val currencyFragment = CurrencyFragment()
+    val areaFragment = AreaFragment()
+    val lengthFragment = LengthFragment()
+
 
     val fragments = mapOf(R.id.temperature to temperatureFragment,
                          R.id.volume to volumeFragment,
                          R.id.weight to weightFragment,
-                         R.id.currency to currencyFragment
+                         R.id.area to areaFragment,
+                         R.id.length to lengthFragment
                         )
 
     var activeFragment: Fragment = temperatureFragment
@@ -27,7 +30,8 @@ class MainActivity : AppCompatActivity() {
             .add(R.id.content, temperatureFragment)
             .add(R.id.content, volumeFragment).hide(volumeFragment)
             .add(R.id.content, weightFragment).hide(weightFragment)
-            .add(R.id.content, currencyFragment).hide(currencyFragment)
+            .add(R.id.content, areaFragment).hide(areaFragment)
+            .add(R.id.content, lengthFragment).hide(lengthFragment)
             .commit()
 
         bottomNavigationView.setOnNavigationItemSelectedListener { menuItem ->

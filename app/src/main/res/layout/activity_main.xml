@@ -15,7 +15,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:menu="@menu/bottom_navigation" app:labelVisibilityMode="labeled"
-            android:id="@+id/bottomNavigationView"/>
+            android:id="@+id/bottomNavigationView" app:layout_constraintHorizontal_bias="0.0"/>
     <FrameLayout
             android:layout_width="0dp"
             android:layout_height="0dp"

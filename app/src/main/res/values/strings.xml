@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Converter</string>
     <string name="volume">Volume</string>
-    <string name="currency">Currency</string>
+    <string name="area">Area</string>
 
     <string name="temperature">Temperature</string>
     <string name="Fahrenheit">Fahrenheit</string>
@@ -19,20 +19,30 @@
 
     <string name="Input">Input</string>
     <string name="Output">Output</string>
+    <string name="textResult">%s is %.3f %s</string>
+    <string name="textResultTooSmall">%s less or equal than 0.001 %s</string>
+    <string name="textFormula">%s = %5f %s</string>
+
     <string name="weight">Weight</string>
-    <string name="weightResult">%s is %.3f %s</string>
-    <string name="weightResultTooSmall">%s less or equal than 0.001 %s</string>
     <string name="weightInputError">Plese Input Weight</string>
-    <string name="weightFormula">%s = %5f %s</string>
-
-
     <string-array name="weightItem_Array">
-        <item>Ounce</item>
-        <item>Pound</item>
+        <item>Ounce(oz)</item>
+        <item>Pound(lb)</item>
         <item>USTon</item>
         <item>MetricTon</item>
         <item>Kg</item>
         <item>g</item>
     </string-array>
 
+    <string name="length">Length</string>
+    <string name="lengthInputError">Plese Input Length</string>
+    <string-array name="lengthItem_Array">
+        <item>Inch</item>
+        <item>Feet</item>
+        <item>Yard</item>
+        <item>Mile</item>
+        <item>CM</item>
+        <item>M</item>
+        <item>KM</item>
+    </string-array>
 </resources>

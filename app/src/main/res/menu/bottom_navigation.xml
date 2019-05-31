@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:title="@string/temperature" android:icon="@android:drawable/ic_menu_gallery"
           android:id="@+id/temperature"/>
     <item android:title="@string/volume" android:icon="@android:drawable/ic_menu_delete" android:id="@+id/volume"/>
     <item android:title="@string/weight" android:icon="@android:drawable/ic_menu_myplaces" android:id="@+id/weight"/>
-    <item android:title="@string/currency" android:icon="@android:drawable/sym_call_missed" android:id="@+id/currency"/>
+    <item android:title="@string/area" android:icon="@android:drawable/arrow_up_float" android:id="@+id/area"/>
+    <item android:title="@string/length" android:id="@+id/length" android:icon="@android:drawable/btn_star_big_on"/>
 </menu>
