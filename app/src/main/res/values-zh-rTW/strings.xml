@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">單位換算</string>
-    <string name="volume">容積</string>
 
     <string name="temperature">溫度</string>
     <string name="Fahrenheit">華氏</string>
@@ -53,4 +52,16 @@
     <string name="Hectare">公頃</string>
     <string name="MetricAcre">公畝</string>
     <string name="Acre">英畝</string>
+
+    <string name="volume">容積</string>
+    <string name="teaSpoon">茶匙</string>
+    <string name="tableSpoon">湯匙</string>
+    <string name="floz">液體盎司</string>
+    <string name="cup">杯</string>
+    <string name="pint">品脫</string>
+    <string name="quart">夸特</string>
+    <string name="gallon">加侖</string>
+    <string name="ml">毫升</string>
+    <string name="l">升</string>
+
 </resources>

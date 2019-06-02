@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Converter</string>
-    <string name="volume">Volume</string>
 
     <string name="temperature">Temperature</string>
     <string name="Fahrenheit">Fahrenheit</string>
@@ -52,4 +51,15 @@
     <string name="Hectare">Hectare</string>
     <string name="MetricAcre">Metric Acre</string>
     <string name="Acre">Acre</string>
+
+    <string name="volume">Volume</string>
+    <string name="teaSpoon">TeaSpoon</string>
+    <string name="tableSpoon">TableSpoon</string>
+    <string name="floz">Fl.Oz</string>
+    <string name="cup">Cup</string>
+    <string name="pint">Pint</string>
+    <string name="quart">Quart</string>
+    <string name="gallon">Gllon</string>
+    <string name="ml">Milliliter</string>
+    <string name="l">Liter</string>
 </resources>
