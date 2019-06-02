@@ -12,7 +12,6 @@ class MainActivity : AppCompatActivity() {
     val areaFragment = AreaFragment()
     val lengthFragment = LengthFragment()
 
-
     val fragments = mapOf(R.id.temperature to temperatureFragment,
                          R.id.volume to volumeFragment,
                          R.id.weight to weightFragment,
@@ -26,19 +25,18 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        supportFragmentManager.beginTransaction()
-            .add(R.id.content, temperatureFragment)
-            .add(R.id.content, volumeFragment).hide(volumeFragment)
-            .add(R.id.content, weightFragment).hide(weightFragment)
-            .add(R.id.content, areaFragment).hide(areaFragment)
-            .add(R.id.content, lengthFragment).hide(lengthFragment)
-            .commit()
+        if (savedInstanceState == null) {
+            // this is the first time rendering the activity, so show
+            // the temperature fragment
+            supportFragmentManager.beginTransaction()
+                .add(R.id.content, temperatureFragment)
+                .commit()
+        }
 
         bottomNavigationView.setOnNavigationItemSelectedListener { menuItem ->
             val fragmentToDisplayOnTheScreen = fragments[menuItem.itemId]!!
             supportFragmentManager.beginTransaction()
-                .hide(activeFragment)
-                .show(fragmentToDisplayOnTheScreen)
+                .replace(R.id.content, fragmentToDisplayOnTheScreen)
                 .commit()
             activeFragment = fragmentToDisplayOnTheScreen
             true
