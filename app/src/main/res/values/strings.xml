@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">Converter</string>
     <string name="volume">Volume</string>
-    <string name="area">Area</string>
 
     <string name="temperature">Temperature</string>
     <string name="Fahrenheit">Fahrenheit</string>
@@ -45,4 +44,12 @@
         <item>M</item>
         <item>KM</item>
     </string-array>
+
+    <string name="area">Area</string>
+    <string name="sqFeet">sq Feet</string>
+    <string name="Ping">Ping</string>
+    <string name="sqMeter">sq Meter</string>
+    <string name="Hectare">Hectare</string>
+    <string name="MetricAcre">Metric Acre</string>
+    <string name="Acre">Acre</string>
 </resources>
