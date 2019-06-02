@@ -22,7 +22,7 @@
     <string name="textFormula">%s = %5f %s</string>
 
     <string name="weight">Weight</string>
-    <string name="weightInputError">Plese Input Weight</string>
+    <string name="weightInputError">Please Input Weight</string>
     <string-array name="weightItem_Array">
         <item>Ounce(oz)</item>
         <item>Pound(lb)</item>
@@ -33,7 +33,7 @@
     </string-array>
 
     <string name="length">Length</string>
-    <string name="lengthInputError">Plese Input Length</string>
+    <string name="lengthInputError">Please Input Length</string>
     <string-array name="lengthItem_Array">
         <item>Inch</item>
         <item>Feet</item>
