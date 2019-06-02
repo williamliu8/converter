@@ -51,7 +51,7 @@ class TemperatureFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        activity?.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
+
         val Inputspinner:Spinner = tempInputSpinner
         var tempItemSelect = 0
 
