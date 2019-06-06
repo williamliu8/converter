@@ -6,8 +6,8 @@
 
     <TextView
             android:text="@string/weight"
-            android:layout_width="255dp"
-            android:layout_height="61dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:id="@+id/ID_weightFormula"
             android:layout_marginTop="28dp"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
@@ -16,33 +16,34 @@
             android:layout_marginStart="8dp"
     />
     <Spinner
-            android:layout_width="395dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/weightInputSpinner" android:layout_marginTop="52dp"
-            app:layout_constraintTop_toBottomOf="@+id/ID_weightFormula" app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/weightInputSpinner"
+            app:layout_constraintStart_toStartOf="parent"
             android:layout_marginLeft="8dp" android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="8dp" android:layout_marginRight="8dp" app:layout_constraintHorizontal_bias="0.0"/>
+            android:layout_marginEnd="8dp" android:layout_marginRight="8dp" app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintTop_toBottomOf="@+id/textView4" android:layout_marginTop="16dp"/>
     <Spinner
-            android:layout_width="395dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/weightOutputSpinner"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginLeft="8dp" android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="8dp" android:layout_marginRight="8dp"
-            app:layout_constraintHorizontal_bias="0.0" android:layout_marginTop="52dp"
-            app:layout_constraintTop_toBottomOf="@+id/weightInputSpinner"/>
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintTop_toBottomOf="@+id/textView6" android:layout_marginTop="16dp"/>
     <TextView
             android:text="@string/weightInputError"
-            android:layout_width="196dp"
-            android:layout_height="73dp"
-            android:id="@+id/textWeightResult" android:layout_marginTop="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textWeightResult" android:layout_marginTop="32dp"
             app:layout_constraintTop_toBottomOf="@+id/weightOutputSpinner"
-            app:layout_constraintStart_toEndOf="@+id/weightInputText" android:layout_marginLeft="88dp"
-            android:layout_marginStart="88dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="35dp"
-            android:layout_marginRight="35dp" app:layout_constraintHorizontal_bias="0.689"/>
+            app:layout_constraintStart_toEndOf="@+id/weightInputText" android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp" app:layout_constraintHorizontal_bias="0.689"/>
     <EditText
-            android:layout_width="163dp"
-            android:layout_height="45dp"
+            android:layout_width="135dp"
+            android:layout_height="47dp"
             android:inputType="numberDecimal|numberSigned"
             android:ems="10"
             android:id="@+id/weightInputText" android:layout_marginTop="16dp"
@@ -50,16 +51,16 @@
             android:layout_marginLeft="8dp" android:layout_marginStart="8dp" android:hint="@string/weightInputError"/>
     <TextView
             android:text="@string/Input"
-            android:layout_width="66dp"
-            android:layout_height="26dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:id="@+id/textView4" app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp" android:layout_marginTop="16dp"
             app:layout_constraintTop_toBottomOf="@+id/ID_weightFormula"/>
     <TextView
             android:text="@string/Output"
-            android:layout_width="69dp"
-            android:layout_height="29dp"
-            android:id="@+id/textView6" android:layout_marginTop="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView6" android:layout_marginTop="16dp"
             app:layout_constraintTop_toBottomOf="@+id/weightInputSpinner" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginLeft="8dp" android:layout_marginStart="8dp"/>
 </android.support.constraint.ConstraintLayout>
