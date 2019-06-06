@@ -34,7 +34,19 @@ class MainActivity : AppCompatActivity() {
             .add(R.id.content, lengthFragment).hide(lengthFragment)
             .commit()
 
+        setTitle(R.string.temperature)
+
         bottomNavigationView.setOnNavigationItemSelectedListener { menuItem ->
+            // Set the title of the activity to match the fragment on display
+            setTitle(when (menuItem.itemId) {
+                R.id.temperature -> R.string.temperature
+                R.id.volume -> R.string.volume
+                R.id.weight -> R.string.weight
+                R.id.area -> R.string.area
+                R.id.length -> R.string.length
+                else -> R.string.temperature
+            })
+
             val fragmentToDisplayOnTheScreen = fragments[menuItem.itemId]!!
             supportFragmentManager.beginTransaction()
                 .hide(activeFragment)
