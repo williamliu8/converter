@@ -2,39 +2,30 @@ package com.HGS.converter
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v4.app.Fragment
+import android.support.v4.view.ViewPager
+import android.view.Menu
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-    val temperatureFragment = TemperatureFragment()
-    val volumeFragment = VolumeFragment()
-    val weightFragment = WeightFragment()
-    val areaFragment = AreaFragment()
-    val lengthFragment = LengthFragment()
 
-    val fragments = mapOf(R.id.temperature to temperatureFragment,
-                         R.id.volume to volumeFragment,
-                         R.id.weight to weightFragment,
-                         R.id.area to areaFragment,
-                         R.id.length to lengthFragment
-                        )
-
-    var activeFragment: Fragment = temperatureFragment
+    private val contentPagerAdapter = ContentPagerAdapter(supportFragmentManager)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        if (savedInstanceState == null) {
-            // this is the first time rendering the activity, so show
-            // the temperature fragment
-            supportFragmentManager.beginTransaction()
-                .add(R.id.content, temperatureFragment)
-                .commit()
-        }
+        // Tell the view pager what fragments it should cycle through.
+        viewPager.adapter = contentPagerAdapter
+        // When someone swipes between fragments, update the bottom navigation view.
+        viewPager.addOnPageChangeListener(object: ViewPager.SimpleOnPageChangeListener() {
+            override fun onPageSelected(position: Int) {
+                bottomNavigationView.menu.getItem(position).isChecked = true
+            }
+        })
 
         setTitle(R.string.temperature)
 
+        // When you press a button in the bottom navigation view, update the view pager.
         bottomNavigationView.setOnNavigationItemSelectedListener { menuItem ->
             // Set the title of the activity to match the fragment on display
             setTitle(when (menuItem.itemId) {
@@ -46,11 +37,8 @@ class MainActivity : AppCompatActivity() {
                 else -> R.string.temperature
             })
 
-            val fragmentToDisplayOnTheScreen = fragments[menuItem.itemId]!!
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.content, fragmentToDisplayOnTheScreen)
-                .commit()
-            activeFragment = fragmentToDisplayOnTheScreen
+            viewPager.currentItem = contentPagerAdapter.getPosition(menuItem.itemId)
+
             true
         }
     }
