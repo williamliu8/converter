@@ -45,21 +45,21 @@
     </string-array>
 
     <string name="area">Area</string>
-    <string name="sqFeet">sq Feet</string>
+    <string name="sqFeet">Sq Feet</string>
     <string name="Ping">Ping</string>
-    <string name="sqMeter">sq Meter</string>
+    <string name="sqMeter">Sq Meter</string>
     <string name="Hectare">Hectare</string>
     <string name="MetricAcre">Metric Acre</string>
     <string name="Acre">Acre</string>
 
     <string name="volume">Volume</string>
-    <string name="teaSpoon">TeaSpoon</string>
-    <string name="tableSpoon">TableSpoon</string>
+    <string name="teaSpoon">Teaspoon</string>
+    <string name="tableSpoon">Tablespoon</string>
     <string name="floz">Fl.Oz</string>
     <string name="cup">Cup</string>
     <string name="pint">Pint</string>
     <string name="quart">Quart</string>
-    <string name="gallon">Gllon</string>
+    <string name="gallon">Gallon</string>
     <string name="ml">Milliliter</string>
     <string name="l">Liter</string>
 </resources>

@@ -19,7 +19,16 @@ class MainActivity : AppCompatActivity() {
         // When someone swipes between fragments, update the bottom navigation view.
         viewPager.addOnPageChangeListener(object: ViewPager.SimpleOnPageChangeListener() {
             override fun onPageSelected(position: Int) {
-                bottomNavigationView.menu.getItem(position).isChecked = true
+                val menuItem = bottomNavigationView.menu.getItem(position)
+                menuItem.isChecked = true
+                setTitle(when (menuItem.itemId) {
+                    R.id.temperature -> R.string.temperature
+                    R.id.volume -> R.string.volume
+                    R.id.weight -> R.string.weight
+                    R.id.area -> R.string.area
+                    R.id.length -> R.string.length
+                    else -> R.string.temperature
+                })
             }
         })
 
@@ -27,15 +36,6 @@ class MainActivity : AppCompatActivity() {
 
         // When you press a button in the bottom navigation view, update the view pager.
         bottomNavigationView.setOnNavigationItemSelectedListener { menuItem ->
-            // Set the title of the activity to match the fragment on display
-            setTitle(when (menuItem.itemId) {
-                R.id.temperature -> R.string.temperature
-                R.id.volume -> R.string.volume
-                R.id.weight -> R.string.weight
-                R.id.area -> R.string.area
-                R.id.length -> R.string.length
-                else -> R.string.temperature
-            })
 
             viewPager.currentItem = contentPagerAdapter.getPosition(menuItem.itemId)
 
