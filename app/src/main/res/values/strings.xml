@@ -62,4 +62,13 @@
     <string name="gallon">Gallon</string>
     <string name="ml">Milliliter</string>
     <string name="l">Liter</string>
+
+    <string name="perunitcalc">Per Unit Calculator</string>
+    <string name="per">----------</string>
+    <string name="multiply">X</string>
+    <string name="equal">=</string>
+    <string name="numerator">Numerator</string>
+    <string name="denominator">Denominator</string>
+    <string name="result">Result</string>
+    <string name="close">Back</string>
 </resources>

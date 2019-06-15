@@ -1,9 +1,10 @@
 package com.HGS.converter
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.design.widget.FloatingActionButton
 import android.support.v4.view.ViewPager
-import android.view.Menu
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -40,6 +41,12 @@ class MainActivity : AppCompatActivity() {
             viewPager.currentItem = contentPagerAdapter.getPosition(menuItem.itemId)
 
             true
+        }
+
+        val fab = findViewById(R.id.calcfab) as FloatingActionButton
+        fab.setOnClickListener{view ->
+            val popactive = Intent(this,popupActivity::class.java)
+            startActivity(popactive)
         }
     }
 }
