@@ -26,10 +26,10 @@ class popupActivity : Activity() {
         var calnumInput1:Float = 1f
         var caldenInput:Float = 1f
         var caldenInput1:Float = 1f
+        var caltaxInput:Float = 0f
 
         fun calResult(){
-            var calResult = calnumInput*calnumInput1/(caldenInput*caldenInput1)
-
+            var calResult = (calnumInput*calnumInput1*((100+caltaxInput)/100)/(caldenInput*caldenInput1))
             val calResultText:TextView = findViewById(R.id.calResult)
             calResultText.text = calResult.toString()
         }
@@ -40,14 +40,12 @@ class popupActivity : Activity() {
                 var calnumInputNable = s.toString().toFloatOrNull()
 
                 if(calnumInputNable==null){
-                    calnumInputtext.hint=getString(R.string.numerator)
                     calnumInput = 1f
                 }
                 else{
                     calnumInput = calnumInputNable
-                    calResult()
                 }
-
+                calResult()
             }
             override fun afterTextChanged(e: Editable) {}
         })
@@ -58,14 +56,12 @@ class popupActivity : Activity() {
                 var calnumInputNable = s.toString().toFloatOrNull()
 
                 if(calnumInputNable==null){
-                    calnumInputtext.hint=getString(R.string.numerator)
                     calnumInput1 = 1f
                 }
                 else{
                     calnumInput1 = calnumInputNable
-                    calResult()
                 }
-
+                calResult()
             }
             override fun afterTextChanged(e: Editable) {}
         })
@@ -76,14 +72,12 @@ class popupActivity : Activity() {
                 var caldenInputNable = s.toString().toFloatOrNull()
 
                 if(caldenInputNable==null){
-                    caldenInputtext.hint=getString(R.string.denominator)
                     caldenInput = 1f
                 }
                 else{
                     caldenInput = caldenInputNable
-                    calResult()
                 }
-
+                calResult()
             }
             override fun afterTextChanged(e: Editable) {}
         })
@@ -94,28 +88,32 @@ class popupActivity : Activity() {
                 var caldenInputNable = s.toString().toFloatOrNull()
 
                 if(caldenInputNable==null){
-                    caldenInputtext1.hint=getString(R.string.denominator)
                     caldenInput1 = 1f
                 }
                 else{
                     caldenInput1 = caldenInputNable
-                    calResult()
                 }
+                calResult()
 
             }
             override fun afterTextChanged(e: Editable) {}
         })
 
+        calTaxinputtext.addTextChangedListener(object: TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                var caltaxInputNable = s.toString().toFloatOrNull()
 
-
-        val botton = findViewById(R.id.button) as Button
-        button.setOnClickListener{
-            val mainactive = Intent(this,MainActivity::class.java)
-            startActivity(mainactive)
-        }
-
-
-
+                if(caltaxInputNable==null){
+                    caltaxInput = 0f
+                }
+                else{
+                    caltaxInput = caltaxInputNable
+                }
+                calResult()
+            }
+            override fun afterTextChanged(e: Editable) {}
+        })
 
     }
 }

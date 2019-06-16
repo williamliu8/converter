@@ -76,11 +76,11 @@ class TemperatureFragment : Fragment() {
                 {
                     tempList.F2C.ordinal -> {
                         ID_tempFormula.text = getString(R.string.tempF2CFormula)
-                        tempInputText.hint=getString(R.string.Fahrenheit)
+                        tempInputText.hint=getString(R.string.tempFdegree)
                     }
                     tempList.C2F.ordinal -> {
                         ID_tempFormula.text = getString(R.string.tempC2FFormula)
-                        tempInputText.hint=getString(R.string.Celsius)
+                        tempInputText.hint=getString(R.string.tempCdegree)
                     }
                 }
             }
