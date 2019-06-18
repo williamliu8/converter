@@ -24,27 +24,22 @@
                     android:id="@+id/tempInputSpinner"
                     android:layout_marginTop="8dp"
                     android:layout_marginLeft="4dp"/>
-            <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-                <EditText
-                        android:layout_width="60dp"
-                        android:layout_height="wrap_content"
-                        android:inputType="numberDecimal|numberSigned"
-                        android:ems="10"
-                        android:id="@+id/tempInputText"
-                        android:hint="@string/tempFdegree"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginLeft="4dp"/>
-                <TextView
-                        android:text="@string/tempInputError"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/textTempResult"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginLeft="4dp"/>
-            </LinearLayout>
+            <EditText
+                    android:layout_width="135dp"
+                    android:layout_height="47dp"
+                    android:inputType="numberDecimal|numberSigned"
+                    android:ems="10"
+                    android:id="@+id/tempInputText"
+                    android:hint="@string/tempFdegree"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="4dp"/>
+            <TextView
+                    android:text="@string/tempInputError"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textTempResult"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="4dp"/>
         </LinearLayout>
     </ScrollView>
 </android.support.constraint.ConstraintLayout>
