@@ -51,7 +51,7 @@ class AreaFragment : Fragment() {
                 areaList.acre.ordinal -> input2sqft = 43560f
             }
 
-            val sqft2acre = input2sqft/43560
+            val sqft2acre = input2sqft/43560f
             val sqft2sqmeter = input2sqft/10.7638675f
             val sqft2ping = sqft2sqmeter/3.305785f
             val sqft2hectare = sqft2sqmeter/10000f

@@ -7,7 +7,7 @@
     <string name="tempFdegree">°F</string>
     <string name="tempCdegree">°C</string>
     <string name="tempResult">%s is %.1f %s</string>
-    <string name="tempInputError">Please enter Temperature</string>
+    <string name="tempInputError">Plz enter Value</string>
     <string-array name="tempItem_Array">
         <item>Fahrenheit to Celsius</item>
         <item>Celsius to Fahrenheit</item>
@@ -21,14 +21,12 @@
 
     <string name="weight">Weight</string>
     <string name="weightInputError">Please Input Weight</string>
-    <string-array name="weightItem_Array">
-        <item>Ounce(oz)</item>
-        <item>Pound(lb)</item>
-        <item>USTon</item>
-        <item>MetricTon</item>
-        <item>Kg</item>
-        <item>g</item>
-    </string-array>
+    <string name="ounce">Ounce(oz)</string>
+    <string name="pound">Pound(lb)</string>
+    <string name="uston">USTon</string>
+    <string name="metricton">MetricTon</string>
+    <string name="kg">Kg</string>
+    <string name="g">g</string>
 
     <string name="length">Length</string>
     <string name="lengthInputError">Please Input Length</string>

@@ -5,12 +5,12 @@ import android.support.v4.app.Fragment
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.LayoutInflater
+import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.Spinner
 import kotlinx.android.synthetic.main.fragment_weight.*
+import java.math.RoundingMode
+import java.text.DecimalFormat
 
 class WeightFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -26,133 +26,206 @@ class WeightFragment : Fragment() {
         g
     }
 
+    fun clearAllEditText(){
+        ounceInputText.setText("")
+        poundInputText.setText("")
+        ustonInputText.setText("")
+        metrictonInputText.setText("")
+        KgInputText.setText("")
+        gInputText.setText("")
+    }
+
+
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        val weightArray = getResources().getStringArray(R.array.weightItem_Array)
-        var coefficient:Float= 0f
-        //Input Spinner
-        val Inputspinner: Spinner = weightInputSpinner
-        var weightInputItemSelect = 0
-        //Output Spinner
-        val Outputspinner: Spinner = weightOutputSpinner
-        var weightOutputItemSelect = 0
+        var weightInputUnit: Int = 0
 
+        fun weightCalculateAndShow(s: CharSequence?, weightInputUnit: Int) {
+            var weightInputValue = s.toString().toFloatOrNull()
+            var input2g = 0f
 
-        ArrayAdapter.createFromResource(
-            this.activity,
-            R.array.weightItem_Array,
-            android.R.layout.simple_spinner_item
-        ).also { adapter ->
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-            Inputspinner.adapter = adapter
-        }
-
-
-        fun weightFindCoefficient(Ounce:Float,OutputSelect:Int) {
-            var gram=Ounce*28.349523125f
-            when(OutputSelect){
-                weightList.ounce.ordinal -> coefficient = Ounce
-                weightList.pound.ordinal -> coefficient = Ounce/16
-                weightList.uston.ordinal -> coefficient = Ounce/32000
-                weightList.metricton.ordinal -> coefficient = gram/1000000
-                weightList.Kg.ordinal -> coefficient = gram/1000f
-                weightList.g.ordinal -> coefficient = gram
+            when (weightInputUnit) {
+                weightList.ounce.ordinal -> input2g = 28.349523125f
+                weightList.pound.ordinal -> input2g = 453.59237f
+                weightList.uston.ordinal -> input2g = 907184.74f
+                weightList.g.ordinal -> input2g = 1f
+                weightList.Kg.ordinal -> input2g = 1000f
+                weightList.metricton.ordinal -> input2g = 1000000f
             }
-        }
 
-        fun weightInputOutputHandler(InputSelect:Int,OutputSelect:Int){
-            var InputEQ2ounce = 0f
-            when(InputSelect)
-            {
-                weightList.ounce.ordinal -> {
-                    InputEQ2ounce = 1f
-                    weightFindCoefficient(InputEQ2ounce,OutputSelect)
+            val g2ounce = input2g/28.349523125f
+            val g2Kg = input2g/1000f
+            val g2metricton = input2g/1000000f
+            val g2pound = input2g / 453.59237f
+            val g2uston = input2g / 907184.74f
+/*
+            fun round2thousandth(num:Float,mode:Int):String{
+                val df = DecimalFormat("#.######")
+                when(mode){
+                    0 -> df.roundingMode = RoundingMode.FLOOR
+                    1 -> df.roundingMode = RoundingMode.CEILING
                 }
-                weightList.pound.ordinal ->{
-                    InputEQ2ounce = 16f
-                    weightFindCoefficient(InputEQ2ounce,OutputSelect)
-                }
-                weightList.uston.ordinal -> {
-                    InputEQ2ounce = 32000f
-                    weightFindCoefficient(InputEQ2ounce,OutputSelect)
-                }
-                weightList.metricton.ordinal -> {
-                    InputEQ2ounce = 35273.9619f
-                    weightFindCoefficient(InputEQ2ounce,OutputSelect)
-                }
-                weightList.Kg.ordinal -> {
-                    InputEQ2ounce = 35.2739619f
-                    weightFindCoefficient(InputEQ2ounce,OutputSelect)
-                }
-                weightList.g.ordinal -> {
-                    InputEQ2ounce = 0.0352739619f
-                    weightFindCoefficient(InputEQ2ounce,OutputSelect)
+
+                return df.format(num)
+            }
+*/
+            if (weightInputUnit != weightList.ounce.ordinal) {
+                if (weightInputValue == null) {
+                    ounceInputText.hint = getString(R.string.ounce)
+                } else {
+                    ounceInputText.hint = (weightInputValue * g2ounce).toString()
                 }
             }
-        }
 
-        Inputspinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
-            override fun onNothingSelected(parent: AdapterView<*>?) {
-
-            }
-            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                weightInputText.setText("")
-                weightInputItemSelect = position
-                weightInputText.hint=weightArray[weightInputItemSelect]
-                weightInputOutputHandler(weightInputItemSelect,weightOutputItemSelect)
-                ID_weightFormula.text=getString(R.string.textFormula,weightArray[weightInputItemSelect],coefficient,weightArray[weightOutputItemSelect])
+            if (weightInputUnit != weightList.g.ordinal) {
+                if (weightInputValue == null) {
+                    gInputText.hint = getString(R.string.g)
+                } else {
+                    gInputText.hint = (weightInputValue * input2g).toString()
+                }
             }
 
-        }
-        //Output Spinner
-        ArrayAdapter.createFromResource(
-            this.activity,
-            R.array.weightItem_Array,
-            android.R.layout.simple_spinner_item
-        ).also { adapter ->
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-            Outputspinner.adapter = adapter
-        }
-
-        Outputspinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
-            override fun onNothingSelected(parent: AdapterView<*>?) {
-
+            if (weightInputUnit != weightList.pound.ordinal) {
+                if (weightInputValue == null) {
+                    poundInputText.hint = getString(R.string.pound)
+                } else {
+                    poundInputText.hint = (weightInputValue * g2pound).toString()
+                }
             }
-            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                weightInputText.setText("")
-                weightOutputItemSelect = position
-                weightInputOutputHandler(weightInputItemSelect,weightOutputItemSelect)
-                ID_weightFormula.text=getString(R.string.textFormula,weightArray[weightInputItemSelect],coefficient,weightArray[weightOutputItemSelect])
-
+            if (weightInputUnit != weightList.Kg.ordinal) {
+                if (weightInputValue == null) {
+                    KgInputText.hint = getString(R.string.kg)
+                } else {
+                    KgInputText.hint = (weightInputValue * g2Kg).toString()
+                }
+            }
+            if (weightInputUnit != weightList.metricton.ordinal) {
+                if (weightInputValue == null) {
+                    metrictonInputText.hint = getString(R.string.metricton)
+                } else {
+                    metrictonInputText.hint = (weightInputValue * g2metricton).toString()
+                }
+            }
+            if (weightInputUnit != weightList.uston.ordinal) {
+                if (weightInputValue == null) {
+                    ustonInputText.hint = getString(R.string.uston)
+                } else {
+                    ustonInputText.hint = (weightInputValue * g2uston).toString()
+                }
             }
         }
 
-        fun Float.weightTrans(coefficient:Float): Float {
-            return this*coefficient
-        }
+        //Edit Text "On Touch" and "On Key" listeners
+        //ounce
+        ounceInputText.setOnTouchListener(object : View.OnTouchListener {
+            override fun onTouch(v: View?, event: MotionEvent?): Boolean {
+                when (event?.action) {
+                    MotionEvent.ACTION_DOWN -> clearAllEditText()
+                }
 
-        fun Float.weightResultText(OutputItem:Int,InputItem:Int,weightArray:Array<String>): String {
-            var resultString:Int
-            if(this<=0.001 && this > 0){
-                resultString = R.string.textResultTooSmall
-                return getString(resultString,weightArray[InputItem],weightArray[OutputItem])
+                return v?.onTouchEvent(event) ?: true
             }
-            else{
-                resultString = R.string.textResult
-                return getString(resultString,weightArray[InputItem],this,weightArray[OutputItem])
+        })
+
+        ounceInputText.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+               override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                   weightInputUnit = weightList.ounce.ordinal
+                   weightCalculateAndShow(s, weightInputUnit)
+               }
+
+            override fun afterTextChanged(e: Editable) {}
+        })
+        //g
+        gInputText.setOnTouchListener(object : View.OnTouchListener {
+            override fun onTouch(v: View?, event: MotionEvent?): Boolean {
+                when (event?.action) {
+                    MotionEvent.ACTION_DOWN -> clearAllEditText()
+                }
+                return v?.onTouchEvent(event) ?: true
             }
+        })
 
-        }
-
-        weightInputText.addTextChangedListener(object: TextWatcher {
+        gInputText.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                textWeightResult.text = s.toString().toFloatOrNull()?.weightTrans(coefficient)?.weightResultText(weightOutputItemSelect,weightInputItemSelect,weightArray) ?: getString(R.string.weightInputError)
+                weightInputUnit = weightList.g.ordinal
+                weightCalculateAndShow(s, weightInputUnit)
+            }
+
+            override fun afterTextChanged(e: Editable) {}
+        })
+        //pound
+        poundInputText.setOnTouchListener(object : View.OnTouchListener {
+            override fun onTouch(v: View?, event: MotionEvent?): Boolean {
+                when (event?.action) {
+                    MotionEvent.ACTION_DOWN -> clearAllEditText()
+                }
+                return v?.onTouchEvent(event) ?: true
+            }
+        })
+
+        poundInputText.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                weightInputUnit = weightList.pound.ordinal
+                weightCalculateAndShow(s, weightInputUnit)
             }
             override fun afterTextChanged(e: Editable) {}
         })
+        //Kg
+        KgInputText.setOnTouchListener(object : View.OnTouchListener {
+            override fun onTouch(v: View?, event: MotionEvent?): Boolean {
+                when (event?.action) {
+                    MotionEvent.ACTION_DOWN -> clearAllEditText()
+                }
+                return v?.onTouchEvent(event) ?: true
+            }
+        })
 
+        KgInputText.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                weightInputUnit = weightList.Kg.ordinal
+                weightCalculateAndShow(s, weightInputUnit)
+            }
+            override fun afterTextChanged(e: Editable) {}
+        })
+        //uston
+        ustonInputText.setOnTouchListener(object : View.OnTouchListener {
+            override fun onTouch(v: View?, event: MotionEvent?): Boolean {
+                when (event?.action) {
+                    MotionEvent.ACTION_DOWN -> clearAllEditText()
+                }
+                return v?.onTouchEvent(event) ?: true
+            }
+        })
 
+        ustonInputText.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                weightInputUnit = weightList.uston.ordinal
+                weightCalculateAndShow(s, weightInputUnit)
+            }
+            override fun afterTextChanged(e: Editable) {}
+        })
+        //metricton
+        metrictonInputText.setOnTouchListener(object : View.OnTouchListener {
+            override fun onTouch(v: View?, event: MotionEvent?): Boolean {
+                when (event?.action) {
+                    MotionEvent.ACTION_DOWN -> clearAllEditText()
+                }
+                return v?.onTouchEvent(event) ?: true
+            }
+        })
 
+        metrictonInputText.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                weightInputUnit = weightList.metricton.ordinal
+                weightCalculateAndShow(s, weightInputUnit)
+            }
+            override fun afterTextChanged(e: Editable) {}
+        })
     }
 }

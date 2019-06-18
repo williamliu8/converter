@@ -15,33 +15,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
                 <TextView
-                        android:text="@string/volume"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/textView3" android:layout_marginEnd="8dp"
-                        android:layout_marginRight="8dp"
-                        android:layout_marginLeft="8dp" android:layout_marginStart="8dp"
-                        android:layout_marginTop="4dp"
-                        android:layout_marginBottom="8dp"
-                />
-            </TableRow>
-            <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-                <TextView
                         android:text="@string/teaSpoon"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/textView12" android:layout_marginTop="4dp"
-                        android:layout_marginLeft="8dp" android:layout_marginStart="8dp"/>
+                        android:layout_marginLeft="8dp"/>
                 <TextView
                         android:text="@string/tableSpoon"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/textView13" android:layout_marginTop="4dp"
-                        android:layout_marginEnd="8dp" android:layout_marginRight="8dp"
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginStart="16dp"/>
+                        android:layout_marginLeft="8dp"/>
             </TableRow>
             <TableRow
                     android:layout_width="match_parent"
@@ -52,7 +36,7 @@
                         android:inputType="numberDecimal|numberSigned"
                         android:ems="10"
                         android:id="@+id/teaSpoonInputText" android:layout_marginTop="4dp"
-                        android:layout_marginLeft="8dp" android:layout_marginStart="8dp"
+                        android:layout_marginLeft="8dp"
                         android:hint="@string/teaSpoon"/>
                 <EditText
                         android:layout_width="135dp"
@@ -60,10 +44,8 @@
                         android:inputType="numberDecimal|numberSigned"
                         android:ems="10"
                         android:id="@+id/tableSpoonInputText" android:layout_marginTop="4dp"
-                        android:layout_marginEnd="8dp" android:layout_marginRight="8dp"
                         android:hint="@string/tableSpoon"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginLeft="16dp"/>
+                        android:layout_marginLeft="8dp"/>
             </TableRow>
             <TableRow
                     android:layout_width="match_parent"
@@ -73,16 +55,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/textView14"
-                        android:layout_marginLeft="8dp" android:layout_marginStart="8dp" android:layout_marginTop="4dp"
+                        android:layout_marginLeft="8dp" android:layout_marginTop="4dp"
                 />
                 <TextView
                         android:text="@string/cup"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/textView15" android:layout_marginTop="4dp"
-                        android:layout_marginEnd="8dp" android:layout_marginRight="8dp"
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginStart="16dp"/>
+                        android:layout_marginLeft="8dp"/>
             </TableRow>
             <TableRow
                     android:layout_width="match_parent"
@@ -93,16 +73,15 @@
                         android:inputType="numberDecimal|numberSigned"
                         android:ems="10"
                         android:id="@+id/flozInputText" android:layout_marginTop="4dp"
-                        android:layout_marginLeft="8dp" android:layout_marginStart="8dp" android:hint="@string/floz"/>
+                        android:layout_marginLeft="8dp" android:hint="@string/floz"/>
                 <EditText
                         android:layout_width="135dp"
                         android:layout_height="47dp"
                         android:inputType="numberDecimal|numberSigned"
                         android:ems="10"
                         android:id="@+id/cupInputText" android:layout_marginTop="4dp"
-                        android:layout_marginEnd="8dp" android:layout_marginRight="8dp" android:hint="@string/cup"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginLeft="16dp"/>
+                        android:hint="@string/cup"
+                        android:layout_marginLeft="8dp"/>
             </TableRow>
             <TableRow
                     android:layout_width="match_parent"
@@ -112,15 +91,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/textView16" android:layout_marginTop="4dp"
-                        android:layout_marginLeft="8dp" android:layout_marginStart="8dp"/>
+                        android:layout_marginLeft="8dp"/>
                 <TextView
                         android:text="@string/ml"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/textView19" android:layout_marginTop="4dp"
-                        android:layout_marginEnd="8dp" android:layout_marginRight="8dp"
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginStart="16dp"/>
+                        android:layout_marginLeft="8dp"/>
             </TableRow>
             <TableRow
                     android:layout_width="match_parent"
@@ -131,16 +108,15 @@
                         android:inputType="numberDecimal|numberSigned"
                         android:ems="10"
                         android:id="@+id/pintInputText" android:layout_marginTop="4dp"
-                        android:layout_marginLeft="8dp" android:layout_marginStart="8dp" android:hint="@string/pint"/>
+                        android:layout_marginLeft="8dp" android:hint="@string/pint"/>
                 <EditText
                         android:layout_width="135dp"
                         android:layout_height="47dp"
                         android:inputType="numberDecimal|numberSigned"
                         android:ems="10"
                         android:id="@+id/mlInputText" android:layout_marginTop="4dp"
-                        android:layout_marginEnd="8dp" android:layout_marginRight="8dp" android:hint="Milliliter"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginLeft="16dp"/>
+                        android:hint="Milliliter"
+                        android:layout_marginLeft="8dp"/>
             </TableRow>
             <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
                 <TextView
@@ -148,15 +124,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/textView20" android:layout_marginTop="4dp"
-                        android:layout_marginEnd="8dp" android:layout_marginRight="8dp"
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginStart="16dp"/>
+                        android:layout_marginLeft="8dp"
+/>
                 <TextView
                         android:text="@string/gallon"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/textView18" android:layout_marginTop="4dp"
-                        android:layout_marginLeft="8dp" android:layout_marginStart="8dp"/>
+                        android:layout_marginLeft="8dp"/>
             </TableRow>
             <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
                 <EditText
@@ -165,16 +140,15 @@
                         android:inputType="numberDecimal|numberSigned"
                         android:ems="10"
                         android:id="@+id/lInputText" android:layout_marginTop="4dp"
-                        android:layout_marginEnd="8dp" android:layout_marginRight="8dp" android:hint="@string/l"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginLeft="16dp"/>
+                        android:hint="@string/l"
+                        android:layout_marginLeft="8dp"/>
                 <EditText
                         android:layout_width="135dp"
                         android:layout_height="47dp"
                         android:inputType="numberDecimal|numberSigned"
                         android:ems="10"
                         android:id="@+id/gallonInputText" android:layout_marginTop="4dp"
-                        android:layout_marginLeft="8dp" android:layout_marginStart="8dp" android:hint="@string/gallon"/>
+                        android:layout_marginLeft="8dp" android:hint="@string/gallon"/>
             </TableRow>
             <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
                 <TextView
@@ -182,7 +156,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/textView17" android:layout_marginTop="4dp"
-                        android:layout_marginLeft="8dp" android:layout_marginStart="8dp"/>
+                        android:layout_marginLeft="8dp"/>
             </TableRow>
             <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
                 <EditText
@@ -191,8 +165,8 @@
                         android:inputType="numberDecimal|numberSigned"
                         android:ems="10"
                         android:id="@+id/quartInputText"
-                        android:layout_marginLeft="8dp" android:layout_marginStart="8dp" android:hint="@string/quart"
-                        android:layout_marginTop="8dp"/>
+                        android:layout_marginLeft="8dp" android:hint="@string/quart"
+                        android:layout_marginTop="4dp"/>
             </TableRow>
         </TableLayout>
     </ScrollView>

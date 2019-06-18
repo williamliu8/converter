@@ -135,7 +135,7 @@ class LengthFragment : Fragment() {
             return this*coefficient
         }
 
-        fun Float.lengthResultText(OutputItem:Int,InputItem:Int,weightArray:Array<String>): String {
+        fun Float.lengthResultText(OutputItem:Int,InputItem:Int,lengthArray:Array<String>): String {
             var resultString:Int
             if(this<=0.001 && this > 0){
                 resultString = R.string.textResultTooSmall
