@@ -17,32 +17,40 @@
                     android:id="@+id/ID_lengthFormula"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="4dp"/>
-            <TextView
-                    android:text="@string/Input"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/textView"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginTop="4dp"/>
-            <Spinner
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/lengthInputSpinner"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginTop="4dp"/>
-            <TextView
-                    android:text="@string/Output"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/textView2"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginTop="4dp"/>
-            <Spinner
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/lengthOutputSpinner"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginTop="4dp"/>
+            <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                <TextView
+                        android:text="@string/Input"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="4dp"/>
+                <TextView
+                        android:text="@string/Output"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView2"
+                        android:layout_marginLeft="100dp"
+                        android:layout_marginTop="4dp"/>
+            </TableRow>
+            <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                <Spinner
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/lengthInputSpinner"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="4dp"/>
+                <Spinner
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/lengthOutputSpinner"
+                        android:layout_marginLeft="40dp"
+                        android:layout_marginTop="4dp"/>
+            </TableRow>
             <EditText
                     android:layout_width="135dp"
                     android:layout_height="47dp"
