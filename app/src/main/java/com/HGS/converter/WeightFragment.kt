@@ -11,6 +11,10 @@ import android.view.ViewGroup
 import kotlinx.android.synthetic.main.fragment_weight.*
 import java.math.RoundingMode
 import java.text.DecimalFormat
+// 1.If user touch any of the inputtext, will trigger "-----InputText.setOnTouchListener"
+//   this will clear all of the inputtext
+// 2.If user input value into any of the inputtext, will trigger "----InputText.addTextChangedListener "
+//   this will tell weightCalculateAndShow(s,weightInputUnit) who it is by weightInputUnit
 
 class WeightFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -39,11 +43,15 @@ class WeightFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         var weightInputUnit: Int = 0
+        // This function will
+        // 1. first convert all "Input unit" into gram
+        // 2. calculate coefficient between "gram" to all other "output unit"
+        // 3. calculate result and show
 
         fun weightCalculateAndShow(s: CharSequence?, weightInputUnit: Int) {
             var weightInputValue = s.toString().toFloatOrNull()
             var input2g = 0f
-
+            //first convert all "Input unit" into gram
             when (weightInputUnit) {
                 weightList.ounce.ordinal -> input2g = 28.349523125f
                 weightList.pound.ordinal -> input2g = 453.59237f
@@ -52,7 +60,7 @@ class WeightFragment : Fragment() {
                 weightList.Kg.ordinal -> input2g = 1000f
                 weightList.metricton.ordinal -> input2g = 1000000f
             }
-
+            //calculate coefficient between "gram" to all other "output unit"
             val g2ounce = input2g/28.349523125f
             val g2Kg = input2g/1000f
             val g2metricton = input2g/1000000f
@@ -69,6 +77,7 @@ class WeightFragment : Fragment() {
                 return df.format(num)
             }
 */
+            // calculate and show the result
             if (weightInputUnit != weightList.ounce.ordinal) {
                 if (weightInputValue == null) {
                     ounceInputText.hint = getString(R.string.ounce)

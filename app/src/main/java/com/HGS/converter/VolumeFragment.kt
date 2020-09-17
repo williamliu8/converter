@@ -10,6 +10,10 @@ import android.view.View
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.fragment_area.*
 import kotlinx.android.synthetic.main.fragment_volume.*
+// 1.If user touch any of the inputtext, will trigger "-----InputText.setOnTouchListener"
+//   this will clear all of the inputtext
+// 2.If user input value into any of the inputtext, will trigger "----InputText.addTextChangedListener "
+//   this will tell capacityCalculateAndShow(s,capacityInputUnit) who it is by capacityInputUnit
 
 class VolumeFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -42,11 +46,15 @@ class VolumeFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         var capacityInputUnit: Int = 0
+        // This function will
+        // 1. first convert all "Input unit" into sqft
+        // 2. calculate coefficient between "teaspoon" to all other "output unit"
+        // 3. calculate result and show
 
         fun capacityCalculateAndShow(s: CharSequence?,areaInputUnit:Int) {
             var capacityInputValue = s.toString().toFloatOrNull()
             var input2teaspoon = 0f
-
+            //first convert all "Input unit" into teaspoon
             when (capacityInputUnit) {
                 capacityList.teaspoon.ordinal -> input2teaspoon = 1f
                 capacityList.tablespoon.ordinal -> input2teaspoon = 3f
@@ -58,7 +66,7 @@ class VolumeFragment : Fragment() {
                 capacityList.ml.ordinal -> input2teaspoon = 0.20288413f
                 capacityList.l.ordinal -> input2teaspoon = 202.88413f
             }
-
+            //calculate coefficient between "teaspoon" to all other "output unit"
             val teaspoon2tablespoon = input2teaspoon / 3f
             val teaspoon2floz = input2teaspoon / 6f
             val teaspoon2cup = input2teaspoon / 48f
@@ -67,7 +75,7 @@ class VolumeFragment : Fragment() {
             val teaspoon2gallon = input2teaspoon / 768f
             val teaspoon2ml = input2teaspoon / 0.20288413f
             val teaspoon2l = input2teaspoon / 202.88413f
-
+            // calculate and show the result
             if(capacityInputUnit!= capacityList.teaspoon.ordinal){
                 if(capacityInputValue==null){
                     teaSpoonInputText.hint=getString(R.string.teaSpoon)

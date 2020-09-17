@@ -10,7 +10,10 @@ import android.view.View
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.fragment_area.*
 import kotlinx.android.synthetic.main.fragment_area.view.*
-
+// 1.If user touch any of the inputtext, will trigger "-----InputText.setOnTouchListener"
+//   this will clear all of the inputtext
+// 2.If user input value into any of the inputtext, will trigger "----InputText.addTextChangedListener "
+//   this will tell areaCalculateAndShow(s,areaInputUnit) who it is by areaInputUnit
 class AreaFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_area, container,false)
@@ -37,11 +40,14 @@ class AreaFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         var areaInputUnit:Int=0
-
+        // This function will
+        // 1. first convert all "Input unit" into sqft
+        // 2. calculate coefficient between "sqft" to all other "output unit"
+        // 3. calculate result and show
         fun areaCalculateAndShow(s: CharSequence?,areaInputUnit:Int){
             var areaInputValue=s.toString().toFloatOrNull()
             var input2sqft=0f
-
+            //first convert all "Input unit" into sqft
             when(areaInputUnit){
                 areaList.sqft.ordinal -> input2sqft = 1f
                 areaList.ping.ordinal -> input2sqft = 35.58303f
@@ -50,13 +56,13 @@ class AreaFragment : Fragment() {
                 areaList.macre.ordinal -> input2sqft = 1076.38675f
                 areaList.acre.ordinal -> input2sqft = 43560f
             }
-
+            //calculate coefficient between "sqft" to all other "output unit"
             val sqft2acre = input2sqft/43560f
             val sqft2sqmeter = input2sqft/10.7638675f
             val sqft2ping = sqft2sqmeter/3.305785f
             val sqft2hectare = sqft2sqmeter/10000f
             val sqft2macre = sqft2sqmeter/100f
-
+            // calculate and show the result
             if(areaInputUnit!= areaList.sqft.ordinal){
                 if(areaInputValue==null){
                     sqftInputText.hint=getString(R.string.sqFeet)
