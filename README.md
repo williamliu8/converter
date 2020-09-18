@@ -13,6 +13,7 @@ I've tested functions with
 * ZTE Amazing A30  
   * 5" 480 x 854  
 
+## Functions  
 1.Temperature  
 * Select "Fahrenheit <-> Celsius" from the drop down menu.  
 * Input a number  
