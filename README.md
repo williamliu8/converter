@@ -1,7 +1,7 @@
 <img src="https://drive.google.com/uc?export=view&id=1sbM4NR-Z8GMNZa-ljcZgZ2-AEyj4YpGx" width="256" title="Icon">  
 
 ## Introduction  
-This App can help you to do convertions between metric unit and imperial unit.  
+This App can help you to do metric unit <-> imperial unit.  
 
 I've tested functions with  
 * Samsung Note 3  
@@ -54,20 +54,46 @@ Input number in one of the unit, it will calculate and show you all other units.
 6.Fraction multiplier  
 As you can see, there is a yellow star in a red circle.  
 It is a FAB (Float Action Button).  
-You can drag it any where on the screen, if you click on it, a red small calculator will show up.  
+Please refer to the website:  
+[FAB](https://developer.android.com/guide/topics/ui/floating-action-button)  
+You can drag it any where on the screen.  
+If you click on it, a red small calculator will show up.  
+(Please note that a blank field is default to 1.)  
 
-For example:
-You live in Washington state, the sales tax is 10%.
+In order not to block the convert result, the multiplier is transparent.  
+You can also drag it up and down.  
+
+How to use it?  
+For example:  
+You live in Washington state, the sales tax is 10%.  
 You found a product that is 50 INCHes for $30 and it is 20% off.  
-You would like to know price per CMs include discount and tax.  
-Please note that a blank data is default to 1.  
+What is the price per CM including discount and tax?  
 
-1.Input 50 INCHes,you will get 127 CMs
-2.Then  
-* input 30 to the first numerator, 127 to denominator  
-* input 0.8 to the second numerator
+1.Input 50 INCHes,you will get 127 CMs  
+2.Click on the FAB  
+* Input 30 to the first numerator, 127 to denominator.  
+This is for price per CM.  
+* Input 0.8 to the second numerator, leave denominator blank.(or 80 to numerator, 100 to denominator if you like)  
+This is for 20% off discount.  
+* Input 10 to Tax Rate(%)  
+This is for 10% sales tax  
+* You will get the result!  
+
 |Screen Shot|Example|
 |--------|--------|
 |<img src="https://drive.google.com/uc?export=view&id=1Uv2z4-hxrtYjDSjOoeaeiXKie395i4te" width="256" title="Fraction Multiplier">|<img src="https://drive.google.com/uc?export=view&id=1VT7vP8guLaG5JDBKo4atwZd3CGbgIH5D" width="256" title="Fraction Multiplier EX">|  
 
-To be continued...
+## General Keywords:  
+* BottomNavigationView  
+* Fragments(Temperature,Volume,Weight,Area,Length fragments)  
+* FAB (Float Action Button)  
+* TextView  
+* ListView  
+  * ArrayAdapter:  
+  For drop down menu in Temperature and Length fragments.  
+* ScrollView  
+For low resolution devices.  
+* ViewPager  
+Slide left or right on screen to change different functions.  
+
+Hope you enjoy it!  
