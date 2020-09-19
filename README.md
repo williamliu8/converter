@@ -1,4 +1,4 @@
-<img src="https://drive.google.com/uc?export=view&id=1sbM4NR-Z8GMNZa-ljcZgZ2-AEyj4YpGx" width="256" title="Icon">  
+<img src="https://user-images.githubusercontent.com/50005966/93687445-db426a00-fa72-11ea-89bd-6b08c360d64b.png" width="80" title="Icon">  
 
 ## Introduction  
 This App can help you to do metric unit <-> imperial unit.  
@@ -20,28 +20,28 @@ I've tested functions with
 
 |Screen Shot|Example|
 |--------|--------|
-|<img src="https://drive.google.com/uc?export=view&id=1Ukof4KV_R7K31NZCkzMPR3-3CWy0fk1e" width="256" title="Temperature">|<img src="https://drive.google.com/uc?export=view&id=1VQI3a320PpuIIfQr5qsM6BTEwFF_u_R7" width="256" title="Temperature EX">|  
+|<img src="https://user-images.githubusercontent.com/50005966/93687490-3ecc9780-fa73-11ea-81fb-0dc0e4107234.jpg" width="256" title="Temperature">|<img src="https://user-images.githubusercontent.com/50005966/93687491-412ef180-fa73-11ea-8cde-2b2e979ca39e.jpg" width="256" title="Temperature EX">|  
 
 2.Volume  
 Input number in one of the unit, it will calculate and show you all other units.  
 
 |Screen Shot|Example|
 |--------|--------|
-|<img src="https://drive.google.com/uc?export=view&id=1UjarTEjhApVtlczEbsCsdhBCGuBxU1_0" width="256" title="Volume">|<img src="https://drive.google.com/uc?export=view&id=1VLrgiqM7LwxWizo8ZH7Z97CBd6-F3xbm" width="256" title="VolumeEX">|  
+|<img src="https://user-images.githubusercontent.com/50005966/93687495-48ee9600-fa73-11ea-940b-c62d34f6f238.jpg" width="256" title="Volume">|<img src="https://user-images.githubusercontent.com/50005966/93687496-4d1ab380-fa73-11ea-9e7e-935238f13239.jpg" width="256" title="VolumeEX">|  
 
 3.Weight  
 Input number in one of the unit, it will calculate and show you all other units.  
 
 |Screen Shot|Example|
 |--------|--------|
-|<img src="https://drive.google.com/uc?export=view&id=1VC4DZUSlMdRYRLFzsf9ubvnXj2XfYRa9" width="256" title="Weight">|<img src="https://drive.google.com/uc?export=view&id=1VLXK_PWDwQD8J5YLiiKG65uBBM_1fjPU" width="256" title="WeightEX">|  
+|<img src="https://user-images.githubusercontent.com/50005966/93687499-53a92b00-fa73-11ea-9aad-7b46829109a7.jpg" width="256" title="Weight">|<img src="https://user-images.githubusercontent.com/50005966/93687501-56a41b80-fa73-11ea-8155-2cb148733e6f.jpg" width="256" title="WeightEX">|  
 
 4.Area  
 Input number in one of the unit, it will calculate and show you all other units.  
 
 |Screen Shot|Example|
 |--------|--------|
-|<img src="https://drive.google.com/uc?export=view&id=1V4zyUngPJMWp5aPY-bYeiyCnx27Tq_UF" width="256" title="Area">|<img src="https://drive.google.com/uc?export=view&id=1VJtzHrtV0p0zuaseOG7AWfeOmKA32WCL" width="256" title="Area">|  
+|<img src="https://user-images.githubusercontent.com/50005966/93687510-60c61a00-fa73-11ea-8d89-14e2b9670eb8.jpg" width="256" title="Area">|<img src="https://user-images.githubusercontent.com/50005966/93687514-63287400-fa73-11ea-995f-d065834162a8.jpg" width="256" title="Area">|  
 
 5.Length  
 * Select input unit from drop down menu.  
@@ -50,7 +50,7 @@ Input number in one of the unit, it will calculate and show you all other units.
 
 |Screen Shot|Example|
 |--------|--------|
-|<img src="https://drive.google.com/uc?export=view&id=1V4g9Ag1XGMq7S7_H8bq8nRnAfB-wg8Z0" width="256" title="Length">|<img src="https://drive.google.com/uc?export=view&id=1VI62T0THa-nX69Q9KsjdqjLvuD6F8HCX" width="256" title="LengthEx">|  
+|<img src="https://user-images.githubusercontent.com/50005966/93687477-31afa880-fa73-11ea-91dd-b9ba2ebe2b9b.jpg" width="256" title="Length">|<img src="https://user-images.githubusercontent.com/50005966/93687482-35dbc600-fa73-11ea-9576-d96d4debf592.jpg" width="256" title="LengthEx">|  
 
 6.Fraction multiplier  
 As you can see, there is a yellow star in a red circle.  
@@ -82,7 +82,7 @@ This is for 10% sales tax
 
 |Screen Shot|Example|
 |--------|--------|
-|<img src="https://drive.google.com/uc?export=view&id=1Uv2z4-hxrtYjDSjOoeaeiXKie395i4te" width="256" title="Fraction Multiplier">|<img src="https://drive.google.com/uc?export=view&id=1VT7vP8guLaG5JDBKo4atwZd3CGbgIH5D" width="256" title="Fraction Multiplier EX">|  
+|<img src="(https://user-images.githubusercontent.com/50005966/93687556-79cecb00-fa73-11ea-9931-04e1c318cf35.jpg" width="256" title="Fraction Multiplier">|<img src="https://user-images.githubusercontent.com/50005966/93687532-6e7b9f80-fa73-11ea-85f1-340c85265580.jpg" width="256" title="Fraction Multiplier EX">|  
 
 ## General Keywords:  
 * BottomNavigationView  
