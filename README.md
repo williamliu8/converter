@@ -20,7 +20,7 @@ I've tested functions with
 
 |Screen Shot|Example|
 |--------|--------|
-|<img src="https://user-images.githubusercontent.com/50005966/93687490-3ecc9780-fa73-11ea-81fb-0dc0e4107234.jpg" width="256" title="Temperature">|<img src="https://user-images.githubusercontent.com/50005966/93687491-412ef180-fa73-11ea-8cde-2b2e979ca39e.jpg" width="256" title="Temperature EX">|  
+|<img src="https://user-images.githubusercontent.com/50005966/93687490-3ecc9780-fa73-11ea-81fb-0dc0e4107234.jpg" width="256" title="Temperature">|<img src="https://user-images.githubusercontent.com/50005966/93687491-412ef180-fa73-11ea-8cde-2b2e979ca39e.jpg" width="256" title="TemperatureEX">|  
 
 2.Volume  
 Input number in one of the unit, it will calculate and show you all other units.  
@@ -41,7 +41,7 @@ Input number in one of the unit, it will calculate and show you all other units.
 
 |Screen Shot|Example|
 |--------|--------|
-|<img src="https://user-images.githubusercontent.com/50005966/93687510-60c61a00-fa73-11ea-8d89-14e2b9670eb8.jpg" width="256" title="Area">|<img src="https://user-images.githubusercontent.com/50005966/93687514-63287400-fa73-11ea-995f-d065834162a8.jpg" width="256" title="Area">|  
+|<img src="https://user-images.githubusercontent.com/50005966/93687510-60c61a00-fa73-11ea-8d89-14e2b9670eb8.jpg" width="256" title="Area">|<img src="https://user-images.githubusercontent.com/50005966/93687514-63287400-fa73-11ea-995f-d065834162a8.jpg" width="256" title="AreaEX">|  
 
 5.Length  
 * Select input unit from drop down menu.  
@@ -55,8 +55,7 @@ Input number in one of the unit, it will calculate and show you all other units.
 6.Fraction multiplier  
 As you can see, there is a yellow star in a red circle.  
 It is a FAB (Float Action Button).  
-Please refer to the website:  
-[FAB](https://developer.android.com/guide/topics/ui/floating-action-button)  
+Please refer to the website:[FAB](https://developer.android.com/guide/topics/ui/floating-action-button)  
 You can drag it any where on the screen.  
 If you click on it, a red small calculator will show up.  
 (Please note that a blank field is default to 1.)  
@@ -82,7 +81,7 @@ This is for 10% sales tax
 
 |Screen Shot|Example|
 |--------|--------|
-|<img src="(https://user-images.githubusercontent.com/50005966/93687556-79cecb00-fa73-11ea-9931-04e1c318cf35.jpg" width="256" title="Fraction Multiplier">|<img src="https://user-images.githubusercontent.com/50005966/93687532-6e7b9f80-fa73-11ea-85f1-340c85265580.jpg" width="256" title="Fraction Multiplier EX">|  
+|<img src="https://user-images.githubusercontent.com/50005966/93687556-79cecb00-fa73-11ea-9931-04e1c318cf35.jpg" width="256" title="Fraction Multiplier">|<img src="https://user-images.githubusercontent.com/50005966/93687532-6e7b9f80-fa73-11ea-85f1-340c85265580.jpg" width="256" title="Fraction MultiplierEX">|  
 
 ## General Keywords:  
 * BottomNavigationView  
